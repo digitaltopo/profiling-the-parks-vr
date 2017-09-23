@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Profiling the Parks VR</title>
+
+  <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-terrain-model-component@0.2.3/dist/aframe-terrain-model-component.min.js"></script>
+
+</head>
+
+<body>
+
+  <a-scene debug>
+
+    <!-- Camera -->
+    <a-entity position="100 5 40" rotation="20 100 0" camera="userHeight: 1.6" look-controls wasd-controls="fly: true; acceleration:1000;"></a-entity>
+
+    <!-- Zion -->
+    <a-entity position="0 -535 0" terrain-model="DEM: url(data/zion/zion_dem_envi3.bin); texture: url(data/zion/zion_texture_green2.jpg); planeWidth: 1000; planeHeight: 1000; segmentsWidth: 49; segmentsHeight: 49; zPosition: 1000; wireframe: false"></a-entity>
+
+    <!-- Sky -->
+    <a-sky color="black"></a-sky>
+
+    <!-- Base Plane -->
+    <a-plane height="100" width="100" rotation="-90 0 0"></a-plane>
+
+
+  </a-scene>
+
+
+</body>
+
+</html>
+
+<!--
+
+fog="type: exponential; color: white; density:0.01;"
+
+ -->
